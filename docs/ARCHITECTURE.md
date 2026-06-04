@@ -124,6 +124,7 @@ graph TD
     AUD["screenpipe-audio<br/>(VAD, STT,<br/>diarization)"]
     SCR["screenpipe-screen<br/>(monitor, OCR,<br/>snapshot, comparison)"]
     CAP["screenpipe-capture<br/>(paired_capture)"]
+    %% A11Y: accessibility module - provides tree walker for UI hierarchy and activity feed for user interactions
     A11Y["screenpipe-a11y<br/>(tree walker,<br/>activity feed)"]
     CORE["screenpipe-core<br/>(paths, langs,<br/>pipes, sync, pii)"]
     CONN["screenpipe-connect<br/>(mcp, oauth,<br/>connections)"]
