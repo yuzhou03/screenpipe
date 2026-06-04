@@ -162,7 +162,7 @@ graph TD
 |-------|----------------|
 | `screenpipe-engine` | HTTP/WS server, capture loop, pipes, integrations. The only binary in the workspace. |
 | `screenpipe-db` | SQLite schema, migrations, typed access, write queue, FTS5 helpers. |
-| `screenpipe-audio` | Device enumeration, VAD, Whisper/Deepgram STT, diarization, audio metrics. |
+| `screenpipe-audio` | Device enumeration, VAD（voice activity detection）, Whisper/Deepgram STT, diarization, audio metrics. |
 | `screenpipe-screen` | Monitor enumeration, screenshot, OCR engines, frame comparison, snapshot writer. |
 | `screenpipe-capture` | `paired_capture`: atomic screenshot + AX tree + JPEG write. |
 | `screenpipe-a11y` | Accessibility tree walker (AX on macOS, UIA on Windows, AT-SPI on Linux), UI event tap, activity feed. |
@@ -572,7 +572,7 @@ struct CaptureTriggerMsg {
 
 Internal to `screenpipe-audio`. The capture loop produces
 `AudioInput { data: Vec<f32>, sample_rate, channels, device, timestamp, is_input_device }`.
-This struct is not exposed on the wire; it is the input to the VAD → STT → DB path.
+This struct is not exposed on the wire; it is the input to the VAD（voice activity detection） → STT（speech-to-text） → DB path.
 
 #### 4.4.2 `ChunkOutcome` (DB write classification)
 
